@@ -82,36 +82,36 @@ const musicClubDepartment = {
 })
 
 app.get("/", (request, response) => {
-	response.send("<h1>Welcome to the Music Club Department</h1>")
+	response.status(200).send("<h1>Welcome to the Music Club Department</h1>")
 })
 
 
 
 app.get("/musicalGroups", (request, response) => {
-	response.json(musicClubDepartment.musicalGroups)
+	response.status(200).json(musicClubDepartment.musicalGroups)
 })
 
 app.get("/teachers", (request, response) => {
-	response.json(musicClubDepartment.teachers)
+	response.status(200).json(musicClubDepartment.teachers)
 })
 
 
 app.get("/events", (request, response) => {
-	response.json(musicClubDepartment.events)
+	response.status(200).json(musicClubDepartment.events)
 })
 
 app.get("/events/:id", (request, response) => {
     const index = request.params.id
-response.json(musicClubDepartment.events[index])
+response.status(200).json(musicClubDepartment.events[index])
 })
 
 app.get("/teachers/:id", (request, response) => {
     const index = request.params.id
-response.json(musicClubDepartment.teachers[index])
+response.status(200).json(musicClubDepartment.teachers[index])
 })
 
 app.get("/docs", (request, response) =>{
-    response.send("Go to /musicalGroups or /teachers to learn about the Music Club Department")
+ response.status(200).send("Go to /musicalGroups or /teachers to learn about the Music Club Department")
     })
 
 
@@ -119,7 +119,6 @@ app.get("/docs", (request, response) =>{
 app.use((request, response, ) => {
 	response.status(404).send("404 NOT FOUND")
 })
-
 
 app.listen(3000, () => {
     console.log("Server running")
