@@ -113,9 +113,7 @@ response.status(200).json(musicClubDepartment.teachers[index])
 app.get("/docs", (request, response) =>{
  response.status(200).send("Go to /musicalGroups or /teachers to learn about the Music Club Department")
     })
-
-
-
+    
 app.use((request, response, ) => {
 	response.status(404).send("404 NOT FOUND")
 })
